@@ -1,0 +1,91 @@
+body{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+.header{
+    /* background-color: brown; */
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+.header h1{
+  margin-right: 25%;
+}
+button{
+    width: 150px;
+    height: 30px;
+    background-color: orange;
+    border: none;
+
+}
+.header a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+}
+button:hover{
+    background-color: red;
+}
+.container{
+    /* background-color: blueviolet; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  
+    
+
+
+}
+.etapes{
+    /* background-color: rgb(255, 0, 0); */
+    background-color: rgba(255, 255, 255, 0.2);
+   box-shadow: 5px 15px 10px  rgba(0, 0, 0, 0.356);
+    border-radius: 5%;
+    width: 250px;
+    height: 300px;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+
+}
+.title{
+    /* background-color: aqua; */
+    height: 20%;
+    color: orange;
+    
+}
+p{
+    /* background-color: rgb(95, 226, 43); */
+    height: 80%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 0%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.container h1{
+    position: relative;
+    left: 2%;
+    /* color: orange; */
+}
+h2{
+position: relative;
+left: 18%;
+bottom: 150%;
+}
+h4{
+position: relative;
+left: 10%;
+bottom: 100%;
+/* color: orange; */
+}
