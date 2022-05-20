@@ -6,6 +6,18 @@ $prs_id=htmlspecialchars($_GET['id']);
 $fans=$db->prepare('SELECT * FROM fans WHERE id=?');
 $fans->execute(array($prs_id));
 
+$ticket_id=htmlspecialchars($_GET['id_t']);
+$ticket=$db->prepare('SELECT * FROM ticket WHERE id=?');
+$ticket->execute(array($ticket_id));
+ while($t=$ticket->fetch()){ 
+    
+             $prix=$t['prix'];
+                  
+ } 
+$mod=($prix*10)/100;
+$totale=$mod+$prix;
+ 
+
 // $contact=$db -> query('SELECT * FROM contact ORDER BY date_pub DESC');
 
 
@@ -18,15 +30,17 @@ $fans->execute(array($prs_id));
               $num_c=htmlspecialchars($_POST['num_c']);
               $date_ex=htmlspecialchars($_POST['date_ex']);
               $code=htmlspecialchars($_POST['code']);
-       
-           
+              $options = [
+                'cost' => 12,
+            ];
+              $hashpass = password_hash($code, PASSWORD_BCRYPT, $options);
            
 
         $ins= $db-> prepare('INSERT INTO cards (id_p,num_c,date_ex,code) VALUES(?,? , ? , ?)');
-        $ins-> execute (array($prs_id,$num_c,$date_ex,$code));
+        $ins-> execute (array($prs_id,$num_c,$date_ex,$hashpass));
            
                     
-        header('Location: files/31.pdf');
+        header("Location: files/$ticket_id.pdf");
         
 
             // $_SESSION['status']= "message envoiyer";
@@ -75,7 +89,7 @@ $fans->execute(array($prs_id));
                                  <p><span> nom et prenom  : </span><?= $m['nom']?>  <?= $m['prenom']?> </p>
                                  <p><span>  date de naissance  : </span><?= $m['date_nais']?></p>
                                
-                                 <p><span>  email: </span><?= $m['email']?></p> 
+                                
                                          <h4>          Veuillez bien vous assurer des info ci dessus ! </h4>   <br>
                                     
                                  <br>
@@ -89,6 +103,12 @@ $fans->execute(array($prs_id));
  </div>
 
 </dive>  
+<div>
+    <h1>le montant a payer </h1>
+        <h4>le prix du ticket : <?=$prix?>.00DZD</h4>
+        <h4> Frais TVA (10%) :  <?=$mod?>.00 DZD</h4>
+        <h4>le totale :   <?=$totale?>.00DZD</h4>
+</div>
 
      <h1>Veuillez entrer les information de votre carte</h1>
 
@@ -105,7 +125,7 @@ $fans->execute(array($prs_id));
 </div>
 
 <div class="input-form">
-    <input type="tel" name="code" id="code"
+    <input type="password" name="code" id="code"
         placeholder=" " />
     <label for="code">code CVC2/CVV2 </label>
 </div>

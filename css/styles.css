@@ -281,11 +281,12 @@ section#ticket {
     justify-content: space-around;
   }
   
-  /* a {
-    color: rgb(255, 255, 255);
+  a {
+  
    
     text-decoration: none;
-  } */
+   
+  }
   .card:hover h2 {
     opacity: 1;
 }

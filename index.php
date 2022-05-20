@@ -6,30 +6,7 @@
 include 'php/bdd.php';
 $ticket=$db -> query('SELECT * FROM ticket ORDER BY date_m DESC');
 
-if(isset($_POST['submit'])){
-  if(!empty($_POST['nom']) AND !empty($_POST['email']) AND !empty($_POST['prenom']) AND !empty($_POST['date_nais']) ){
-             $nom=htmlspecialchars($_POST['nom']);
-             $email=htmlspecialchars($_POST['email']);
-             $prenom=htmlspecialchars($_POST['prenom']);
-             $date_nais=nl2br(htmlspecialchars($_POST['date_nais']));
-          
-          
 
-       $ins= $db-> prepare('INSERT INTO fans (nom,email,prenom,date_nais) VALUES(? , ? , ?,?)');
-       $ins-> execute (array($nom,$email,$prenom,$date_nais));
-      
-       $lastid = $db->lastInsertId();
-          
-                   header("Location: php/paiment.php?id=$lastid");
-                  
-   
-    
-
-  }else{
-      echo'<h1>vuiller completer tout les champs</h1>';
-
-  }
-}
 
 
 
@@ -108,12 +85,12 @@ if(isset($_POST['submit'])){
 
  <?php while($m=$ticket->fetch()){ ?>
                 <div class="card card0">
-                  <button   onclick="document.getElementById('forml').style.display='block' " >
-
+                  <a href="php/info.php?id_t=<?=$m['id']?>">
+                 
      
                        <div class="border">
-                                   
-                     
+                   
+                                           
                                      <h2>equipe : </span><?= $m['nom_c1']?> vs <?= $m['nom_c2']?></h2> 
                                      <h2>stade : </span><?= $m['stade']?></h2>
                                      <h2>prix : </span><?= $m['prix']?>.00 DZD</h2>
@@ -125,7 +102,7 @@ if(isset($_POST['submit'])){
                        
                
      
-    </div></button>
+    </div></a>
   </div>
      <?php } ?>
      
@@ -134,32 +111,7 @@ if(isset($_POST['submit'])){
 
         </section>
 
-                   <!-- ------------------------------formulaire -------------------- -->
-                   <div  id="forml" class="container">
-                   
-                    <button onclick="document.getElementById('forml').style.display='none'" >X</button>
-                  <form action="" method="post">
-                    <p>Acheter ticket </p>
   
-                    <input type="text" name="nom" placeholder="Nom"><br>                     
-                    <input type="text" name="prenom" placeholder="Prénom"><br> 
-                    <input type="date" name="date_nais" placeholder="date de naissance " ><br>
-                    <input type="email" name="email" placeholder="Email"><br>
-                   
-                    <input type="submit" name="submit" value="continue ver le paiement"><br>
-                    <!-- <button type="submit" name="submit">yes</button> -->
-                   
-                  </form>
-                
-                  <div class="drop drop-1"></div>
-                  <div class="drop drop-2"></div>
-                  <div class="drop drop-3"></div>
-                  <div class="drop drop-4"></div>
-                  <div class="drop drop-5"></div>
-                </div>
-                       <!-- </div> -->
-
-
 
         <!-- pied de page -->
         <footer>

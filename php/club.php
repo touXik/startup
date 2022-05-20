@@ -14,55 +14,7 @@ while($c = $club->fetch()) {
 
 
 
-           if(isset($_POST['submit'])){
-   if(!empty($_POST['nom_c1']) AND !empty($_POST['nom_c2']) AND !empty($_POST['stade']) AND !empty($_POST['prix']) AND !empty($_POST['nb_t']) AND !empty($_POST['date_m']) AND !empty($_POST['num_c']) AND !empty($_FILES) ){
-             $date_m=nl2br(htmlspecialchars($_POST['date_m']));  
-             $nom_c1=htmlspecialchars($_POST['nom_c1']);
-              $nom_c2=htmlspecialchars($_POST['nom_c2']);
-              $stade=htmlspecialchars($_POST['stade']);
-              $prix=htmlspecialchars($_POST['prix']);
-              $nb_t=htmlspecialchars($_POST['nb_t']);
-              $num_c=htmlspecialchars($_POST['num_c']);
-
-             
-           
-
-        $ins= $db-> prepare('INSERT INTO ticket(date_m,nom_c1,nom_c2,stade,prix,nb_t,num_c,id_c) VALUES(? , ? ,?,?, ?,?,?,?)');
-        $ins-> execute (array($date_m,$nom_c1,$nom_c2,$stade,$prix,$nb_t,$num_c,$id_club));
-        $lastid = $db->lastInsertId();
-
-     
-                $file_name = $lastid.'.pdf' ;
-                $file_extension = strrchr($file_name, ".");
-
-                $file_tmp_name =  $_FILES['fichier']['tmp_name'] ;
-                $file_dest = 'files/'.$file_name;
-  
-                $extension_autorisees = array('.pdf' , 'PDF');
-  
-               if(in_array($file_extension, $extension_autorisees)){
-                       if(move_uploaded_file($file_tmp_name,$file_dest)){
-                       
-                        echo 'ticket ajouter avec succe ';
-                 
-                   } else{
-                       echo 'une errreur est sur lor de lenvoi';
-                   }
-               } else{
-                   echo 'seuls les files pdf autoris';
-               }
  
-                    
-        
-        
-
-     
-
-   }else{
-       echo'<h1>vuiller completer tout les champs</h1>';
-
-   }
-}
 
 
 $ticket = $db->prepare('SELECT * FROM ticket WHERE id_c = ? ORDER BY date_m DESC');

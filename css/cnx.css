@@ -27,11 +27,11 @@ input {
 button {
     border: 0; padding: 10px 15px;
     cursor: pointer; color: white;
-    background-color: #ff9234;
+    background-color: #0f01d3;
 }
 
 button:focus, button:hover {
-    background-color: #d92027;
+    background-color: #20aed9;
 }
 
 .submit-form {
@@ -43,7 +43,7 @@ input::placeholder {
 
 input:focus,
 input:not(:placeholder-shown) {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #0f01d3;
 }
 
 input:not(:placeholder-shown) ~ label,
