@@ -3,7 +3,7 @@
 include 'bdd.php';
 
 
-// $contact=$db -> query('SELECT * FROM contact ORDER BY date_pub DESC');
+
 
 
 
@@ -21,6 +21,7 @@ include 'bdd.php';
 
         $ins= $db-> prepare('INSERT INTO fans (nom,email,prenom,date_nais) VALUES(? , ? , ?,?)');
         $ins-> execute (array($nom,$email,$prenom,$date_nais));
+        $lastid = $db->lastInsertId();
            
                     
         header('Location: ../index.html');

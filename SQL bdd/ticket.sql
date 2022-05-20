@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 18 mai 2022 à 16:22
+-- Généré le :  ven. 20 mai 2022 à 16:05
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -21,6 +21,22 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `ticket`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cards`
+--
+
+DROP TABLE IF EXISTS `cards`;
+CREATE TABLE IF NOT EXISTS `cards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_p` int(11) NOT NULL,
+  `num_c` text NOT NULL,
+  `date_ex` date NOT NULL,
+  `code` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -59,30 +75,7 @@ CREATE TABLE IF NOT EXISTS `fans` (
   `email` varchar(255) NOT NULL,
   `date_nais` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `files`
---
-
-DROP TABLE IF EXISTS `files`;
-CREATE TABLE IF NOT EXISTS `files` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `file_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `files`
---
-
-INSERT INTO `files` (`id`, `name`, `file_url`) VALUES
-(7, 'ticket1.pdf', 'files/ticket1.pdf'),
-(8, 'ticket2.pdf', 'files/ticket2.pdf'),
-(9, 'ticket3.pdf', 'files/ticket3.pdf');
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -99,17 +92,19 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   `prix` varchar(255) NOT NULL,
   `num_c` varchar(255) NOT NULL,
   `stade` varchar(255) NOT NULL,
+  `id_c` int(11) NOT NULL,
+  `nb_t` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `ticket`
 --
 
-INSERT INTO `ticket` (`id`, `date_m`, `nom_c1`, `nom_c2`, `prix`, `num_c`, `stade`) VALUES
-(20, '2022-06-17 18:13:00', 'jsk', 'mca', '300', '1122454545124858/29', '1er novembre tizi-ouzou'),
-(21, '2022-06-07 18:15:00', 'jsk', 'usma', '300', '1122454545124858/29', 'stade 1 er novembre tizi-ouzou'),
-(22, '2022-05-01 18:15:00', 'jsk', 'ES setif', '500', '1122454545124858/29', '5 juillet');
+INSERT INTO `ticket` (`id`, `date_m`, `nom_c1`, `nom_c2`, `prix`, `num_c`, `stade`, `id_c`, `nb_t`) VALUES
+(31, '2022-06-19 18:30:00', 'JSK', 'MCA', '300', '1122454545124858/29', '1er NOVEMBRE TIZI-OUZOU', 8, 0),
+(32, '2022-06-02 16:15:00', 'JSK', 'USMA', '300', '1122454545124858/29', '1er NOVEMBRE TIZI-OUZOU', 8, 0),
+(33, '2022-06-05 17:00:00', 'JSK', 'ES SETIF', '500', '1122454545124858/29', '5 JUILLET', 8, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

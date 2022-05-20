@@ -1,3 +1,5 @@
+
+
 body{
     display: flex;
     flex-direction: column;
@@ -34,10 +36,10 @@ button:hover{
     /* background-color: blueviolet; */
     min-height: 100vh;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: space-around;
     align-items: flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   
     
 
@@ -45,26 +47,36 @@ button:hover{
 }
 .etapes{
     /* background-color: rgb(255, 0, 0); */
-    background-color: rgba(255, 255, 255, 0.2);
-   box-shadow: 5px 15px 10px  rgba(0, 0, 0, 0.356);
+    background-color: rgba(165, 141, 141, 0.2);
+    box-shadow: 5px 15px 10px  rgba(0, 0, 0, 0.356);
     border-radius: 5%;
-    width: 250px;
-    height: 300px;
+    width: 900px;
+    height: 650px;
     margin: 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
     /* align-items: flex-start; */
 
 }
 .title{
-    /* background-color: aqua; */
+    padding-left:30px;
     height: 20%;
-    color: orange;
-    
+    color: rgb(0, 0, 0); 
+    font-size: 20px;
 }
-p{
-    /* background-color: rgb(95, 226, 43); */
+.note{
+    padding-left: 110px;
+    /* padding-top:30px; */
+    color: red;
+    font-size: 30px;
+}
+    
+
+    
+
+/* p{
+    background-color: rgb(95, 226, 43);
     height: 80%;
     margin-left: 2%;
     margin-right: 2%;
@@ -76,7 +88,7 @@ p{
 .container h1{
     position: relative;
     left: 2%;
-    /* color: orange; */
+   
 }
 h2{
 position: relative;
@@ -87,5 +99,5 @@ h4{
 position: relative;
 left: 10%;
 bottom: 100%;
-/* color: orange; */
-}
+color: orange;
+} */
