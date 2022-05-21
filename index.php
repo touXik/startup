@@ -23,13 +23,13 @@ $ticket=$db -> query('SELECT * FROM ticket ORDER BY date_m DESC');
 <html>
     <!-- head -->
     <head>
-        <title>Ticket-en ligne </title>
+        <title>Ticket-Web </title>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- lier la page html avec le css -->
         <link rel="stylesheet" type="text/css" href="css/styles.css"/>
          
-        <link rel="stylesheet" href="css/for.css">
+        <link rel="icon" type="images/png" href="images/log.gif">
 
         <!-- lier un fichier ttf pour changer la police d'ecriture  -->
         <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash&display=swap" rel="stylesheet">
@@ -53,12 +53,12 @@ $ticket=$db -> query('SELECT * FROM ticket ORDER BY date_m DESC');
         <header>
 
           
+        <!-- #6a9498 -->
+
+            <img src="images/log.gif">
 
 
-            <img src="images/002.jpg">
-
-
-            <h1>TICKET</h1>
+            <h1>TICKET-WEB</h1>
               <div class="cont-span">
             <span>Reserve ta place avant que ca soit trop tard !!!!! </span>
                </div>

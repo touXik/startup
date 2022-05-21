@@ -3,10 +3,10 @@
 body{
     display: flex;
     flex-direction: column;
-    /* background-color: aqua; */
+    
 }
 .header{
-    /* background-color: brown; */
+   
     height: 10vh;
     display: flex;
     flex-direction: row;
@@ -33,31 +33,27 @@ button:hover{
     background-color: #20aed9;
 }
 .container{
-    /* background-color: blueviolet; */
+  
     min-height: 100vh;
     display: flex;
-    /* flex-direction: row; */
+   
     justify-content: space-around;
     align-items: flex-start;
-    /* flex-wrap: wrap; */
+ 
   
     
 
 
 }
 .etapes{
-    /* background-color: rgb(255, 0, 0); */
+ 
     background-color: rgba(165, 141, 141, 0.2);
     box-shadow: 5px 15px 10px  rgba(0, 0, 0, 0.356);
     border-radius: 5%;
     width: 900px;
     height: 650px;
     margin: 2%;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: flex-start; */
-    /* align-items: flex-start; */
-
+ 
 }
 .title{
     padding-left:30px;
@@ -67,37 +63,38 @@ button:hover{
 }
 .note{
     padding-left: 110px;
-    /* padding-top:30px; */
+ 
     color: red;
     font-size: 30px;
 }
     
+@media (max-width:450px){
+     .header h1 {
+     /*   margin-right: 25%; */
+        font-size: 1.1em;
+        margin-left: 11%;
+      }
+    
+    button{
+        width: 50px;
+        height: 20px;
+        font-size: 0.7em;
+       
+    
+    }
 
+  .title{
+    padding-left:30px;
+    /* height: 20%; */
+  
+    font-size: 1em;
+}
+.note{
+    padding-left: 2%;
+ 
+  
+    font-size: 1em;
+}
+    }
     
 
-/* p{
-    background-color: rgb(95, 226, 43);
-    height: 80%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 0%;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-.container h1{
-    position: relative;
-    left: 2%;
-   
-}
-h2{
-position: relative;
-left: 18%;
-bottom: 150%;
-}
-h4{
-position: relative;
-left: 10%;
-bottom: 100%;
-color: orange;
-} */

@@ -124,13 +124,14 @@ header h1 {
 
 header img {
     height: 300px;
-    border-style: solid;
-    border-color: black ;
-    border-width: 5px;
-    border-radius: 40%;
-    filter: opacity(0.9)  grayscale(0.7);
+    /* border-style: solid; */
+    /* border-color: black ;
+    border-width: 5px; */
+    border-radius: 80%;
+    filter: opacity(0.9)  ;
 }
-
+/* #d0fcfdgrayscale(0.7)
+#d0fcfd */
 header span {
     font-size: 30px;
    
@@ -246,10 +247,7 @@ section#ticket {
       background-size: 600px;
   }
   
-  .card0 button {
-      background-color: #00000000;
-      border-color: #00000000;
-  }
+
 
   .card h2 {
     font-family: Arial, sans-serif;
@@ -259,19 +257,14 @@ section#ticket {
     transition: all 1s;
   } 
   
-  .fab {
-    opacity: 0;
-    transition: all 1s;
-    color: #fff;
-   
-  }
+
   
   .icons {
     position: absolute;
     width: 50px;
     height: 130px; 
     
-    /* top: 226px; */
+
     top: 200px;
     left: 190px;
    
@@ -291,14 +284,8 @@ section#ticket {
     opacity: 1;
 }
 
-.card:hover .fab {
-    opacity: 1;
-}
 
-   /* formulair  */
-   #forml{
-    display: none;
-  }
+
 
 /* pied de page */
 footer {
@@ -377,8 +364,15 @@ footer {
         font-size: 1.3em;
        font-weight: bold;
     }
+    header h1 {
+        font-size: 66px;
+       
+      }
     header img {
-        height: 250px;
+     
+     
+            height: 190px;
+         
      
     }
     section#about div h3 {
@@ -394,7 +388,25 @@ footer {
         padding: 20px; */
         flex-direction: column;
     }
+   
+    .border {
+        border: 1px solid white;
+    }
+       
+          .card0 {
+            background: url('../images/008.PNG') left center no-repeat;
+           
+            background-size: 600px;
+        }
+        .card h2 {
+            opacity: 1;
+        }
+        
+      
+      
 }
+
+
 
 
 
